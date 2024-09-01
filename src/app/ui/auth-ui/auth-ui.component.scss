@@ -1,0 +1,21 @@
+.body-auth {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .label-title {
+        font-family: "Jura", sans-serif;
+        font-size: 1.8rem;
+    }
+
+    .card-auth {
+        width: 22rem;
+        height: fit-content;
+        background-color: #c4c4c431;
+        border-radius: 0.5rem;
+        box-shadow: 0px 0px 11px 5px rgba(0,0,0,0.1);
+        padding: 2rem;
+    }
+}
