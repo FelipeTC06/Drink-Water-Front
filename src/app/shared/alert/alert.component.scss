@@ -1,0 +1,29 @@
+.alert-body {
+    color: #fff;
+    height: 4rem;
+    width: 20rem;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    font-family: "Jura", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 0.8rem;
+}
+
+.success {
+    background-color: #38b00098;
+}
+
+.error {
+    background-color: #a0000098;
+}
+
+.warning {
+    background-color: #c7a60498;
+}
