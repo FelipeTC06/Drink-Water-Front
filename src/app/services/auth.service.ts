@@ -11,7 +11,7 @@ import { AuthUserResponse } from '../interfaces/authUser.interface';
 export class AuthService {
   http = inject(HttpClient);
 
-  baseUrl: string = 'http://127.0.0.1:8000/user_auth';
+  baseUrl: string = 'https://drink-water-api.onrender.com/user_auth';
 
   register(user: UserRegister): Observable<AuthUserResponse> {
     return this.http.post<AuthUserResponse>(`${this.baseUrl}/register`, user);

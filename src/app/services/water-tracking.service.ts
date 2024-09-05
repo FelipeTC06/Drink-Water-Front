@@ -11,7 +11,7 @@ export class WaterTrackingService {
 
   http = inject(HttpClient);
 
-  baseUrl: string = 'http://localhost:8000/water_tracking';
+  baseUrl: string = 'https://drink-water-api.onrender.com/water_tracking';
 
   registerIntake(intake: RegisterIntake): Observable<RegisterIntakeResponse> {
     return this.http.post<RegisterIntakeResponse>(`${this.baseUrl}/register-intake/`, intake);
