@@ -33,7 +33,7 @@ export class WaterTrackingComponent {
   metaRestante: number = 2100;
   metaConsumida: number = 0;
   percentualConsumido: number = 0;
-  metaatingida: boolean = false;
+  metaAtingida: boolean = false;
 
   consumirAguaForm = this.formBulder.group({
     quantidadeAgua: [250]
@@ -55,12 +55,14 @@ export class WaterTrackingComponent {
           this.metaDia = dados.daily_goal;
           this.metaConsumida = dados.total_intake;
           this.metaRestante = dados.remaining;
-          this.metaatingida = dados.goal_achieved;
+          this.metaAtingida = dados.goal_achieved;
           this.percentualConsumido = (this.metaConsumida / this.metaDia) * 100;
           this.loaderService.isLoading.set(false);
         }),
         catchError(err => {
           console.error('Erro ao obter progresso diário', err);
+          this.alertService.buildAlert.set({ type: 'error', text: err.error.error }); 
+          this.router.navigateByUrl('/register');
           return of(null);
         })
       )

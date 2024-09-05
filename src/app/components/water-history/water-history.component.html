@@ -7,12 +7,12 @@
         <section>
             <div class="history-section">
                 @for (item of historyData; track $index) {
-                    <div class="data-card">
-                        <p><strong>Data:</strong> {{ item.date | date: 'dd/MM/yyyy' }}</p>
-                        <p><strong>Meta do dia:</strong> {{ item.daily_goal }} ml</p>
-                        <p><strong>Consumido:</strong> {{ item.intake_ml }} ml</p>
-                        <p><strong>Meta atingida?:</strong> {{ item.goal_achieved ? 'Sim' : 'Não' }}</p>
-                    </div>
+                <div class="data-card">
+                    <p><strong>Data:</strong> {{ item.date | date: 'dd/MM/yyyy' }}</p>
+                    <p><strong>Meta do dia:</strong> {{ item.daily_goal }} ml</p>
+                    <p><strong>Consumido:</strong> {{ item.intake_ml }} ml</p>
+                    <p><strong>Meta atingida?:</strong> {{ item.goal_achieved ? 'Sim' : 'Não' }}</p>
+                </div>
                 }
             </div>
         </section>

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { AuthUiComponent } from "../../ui/auth-ui/auth-ui.component";
 import { AlertService } from '../../core/signals/alert.service';
 import { AuthService } from '../../services/auth.service';
@@ -15,12 +15,13 @@ import { AuthUserResponse } from '../../interfaces/authUser.interface';
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit {
   loaderService = inject(LoaderService);
   formBulder = inject(FormBuilder);
   router = inject(Router);
   authService = inject(AuthService);
   alertService = inject(AlertService);
+  
 
   form = this.formBulder.nonNullable.group({
     fullname: ['', Validators.required],
@@ -28,6 +29,10 @@ export class RegisterComponent {
     password: ['', Validators.required],
     weight: [0, Validators.required],
   })
+
+  ngOnInit(): void {
+    this.loaderService.isLoading.set(false);
+  }
 
   onSubmit() {
     const isFormValid = this.form.valid;
