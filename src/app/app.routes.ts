@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { authGuard } from './core/authGuard/auth-guard.guard';
 
 export const routes: Routes = [
     {
@@ -20,10 +21,12 @@ export const routes: Routes = [
         path: 'water-tracking/:id/daily',
         loadComponent: () =>
             import('./components/water-tracking/water-tracking.component').then(c => c.WaterTrackingComponent),
+            canActivate: [authGuard],
     },
     {
         path: 'water-tracking/:id/history',
         loadComponent: () =>
             import('./components/water-history/water-history.component').then(c => c.WaterHistoryComponent),
+            canActivate: [authGuard],
     },
 ];
