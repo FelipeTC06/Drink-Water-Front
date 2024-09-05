@@ -34,6 +34,7 @@ export class WaterTrackingComponent {
   metaConsumida: number = 0;
   percentualConsumido: number = 0;
   metaAtingida: boolean = false;
+  maxConsumoAtingido: boolean = false;
 
   consumirAguaForm = this.formBulder.group({
     quantidadeAgua: [250]
@@ -56,6 +57,7 @@ export class WaterTrackingComponent {
           this.metaConsumida = dados.total_intake;
           this.metaRestante = dados.remaining;
           this.metaAtingida = dados.goal_achieved;
+          this.maxConsumoAtingido = dados.max_intake_reached;
           this.percentualConsumido = (this.metaConsumida / this.metaDia) * 100;
           this.loaderService.isLoading.set(false);
         }),

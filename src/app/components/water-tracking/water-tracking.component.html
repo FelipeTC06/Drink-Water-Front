@@ -4,7 +4,9 @@
         <app-loader></app-loader>
         }
         <h1 class="title">Daily Tracking</h1>
-
+        @if (metaAtingida) {
+        <span class="goal-achieved">Meta diária Atingida</span>
+        }
         <section>
             <div class="intake-body">
                 <form [formGroup]="consumirAguaForm" class="intake-form" (ngSubmit)="onSubmit()">
@@ -31,10 +33,10 @@
                             </label>
                         </div>
                     </div>
-                    @if (!metaAtingida) {
-                        <button type="submit" class="btn btn-primary" [disabled]="!metaAtingida">Consumir</button>
+                    @if (!maxConsumoAtingido) {
+                        <button type="submit" class="btn btn-primary">Consumir</button>
                     } @else {
-                        <span class="goal-achieved">Meta diária Atingida</span>
+                        <span class="max-intake-reached">Consumo Máximo Atingido</span>
                     }
                 </form>
             </div>
