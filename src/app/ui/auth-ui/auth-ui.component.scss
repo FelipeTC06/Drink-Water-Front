@@ -4,13 +4,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
     .label-title {
         font-family: "Jura", sans-serif;
         font-size: 1.8rem;
     }
-
+    
     .card-auth {
+        position: relative;
         width: 22rem;
         height: fit-content;
         background-color: #c4c4c431;

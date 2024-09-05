@@ -1,5 +1,8 @@
 <div class="body-auth">
     <section class="card-auth">
+        @if (loaderService.isLoading()) {
+            <app-loader></app-loader>
+            }
         <label class="label-title">{{ title }}</label>
         <ng-content></ng-content>
     </section>

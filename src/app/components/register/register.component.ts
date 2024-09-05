@@ -46,7 +46,7 @@ export class RegisterComponent implements OnInit {
       },
       error: (response) => {
         this.loaderService.isLoading.set(false);
-        this.alertService.buildAlert.set({type: 'error', text: response.error.text});
+        this.alertService.buildAlert.set({type: 'error', text: response.error.message});
       },
       complete: () => {
         this.loaderService.isLoading.set(false);

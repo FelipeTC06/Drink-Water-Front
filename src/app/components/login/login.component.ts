@@ -6,6 +6,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LoaderService } from '../../core/signals/loader.service';
 import { AlertService } from '../../core/signals/alert.service';
 import { AuthUserResponse } from '../../interfaces/authUser.interface';
+import { AuthStateService } from '../../core/signals/auth-state.service';
 
 @Component({
   selector: 'app-login',
@@ -17,6 +18,7 @@ import { AuthUserResponse } from '../../interfaces/authUser.interface';
 export class LoginComponent {
 
   authService = inject(AuthService);
+  authStateService = inject(AuthStateService);
 
   formBulder = inject(FormBuilder);
   loaderService = inject(LoaderService);
@@ -35,6 +37,7 @@ export class LoginComponent {
       next: (response: AuthUserResponse) => {
         this.router.navigate([`/water-tracking/${response.id}/daily`]);
         this.alertService.buildAlert.set({ type: 'success', text: response.message });
+        this.authStateService.currentUserSig.set(response);
       },
       error: (response) => {
         this.loaderService.isLoading.set(false);
