@@ -1,0 +1,36 @@
+.tracking-body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding: 1rem 2.5rem;
+
+    .title {
+        text-decoration: underline;
+        font-family: "Jura", sans-serif;
+        font-size: 1.5rem;
+        margin: 0;
+    }
+
+    section {
+        width: 100%;
+    }
+
+    .history-section {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        height: 20rem;
+        width: 100%;
+        overflow-y: auto;
+
+        .data-card {
+            padding: 0.5rem;
+            border-radius: 8px;
+            border: 1px solid #575757;
+        }
+    }
+}
