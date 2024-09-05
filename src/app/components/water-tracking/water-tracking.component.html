@@ -1,12 +1,10 @@
 <app-nav-bar>
     <div class="tracking-body">
         @if (loaderService.isLoading()) {
-            <app-loader></app-loader>
+        <app-loader></app-loader>
         }
         <h1 class="title">Daily Tracking</h1>
-        @if (metaAtingida) {
-            <span class="goal-achieved">Meta diária Atingida</span>
-        }
+
         <section>
             <div class="intake-body">
                 <form [formGroup]="consumirAguaForm" class="intake-form" (ngSubmit)="onSubmit()">
@@ -33,7 +31,11 @@
                             </label>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Consumir</button>
+                    @if (!metaAtingida) {
+                        <button type="submit" class="btn btn-primary" [disabled]="!metaAtingida">Consumir</button>
+                    } @else {
+                        <span class="goal-achieved">Meta diária Atingida</span>
+                    }
                 </form>
             </div>
         </section>
@@ -43,7 +45,7 @@
                 <p><strong>Meta restante:</strong> {{ metaRestante }}ml</p>
                 <p><strong>Meta já consumida:</strong> {{ metaConsumida }}ml</p>
                 <p><strong>Meta já consumida (%):</strong> {{ percentualConsumido.toFixed(2) }}%</p>
-              </div>            
+            </div>
         </section>
     </div>
 </app-nav-bar>
