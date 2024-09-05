@@ -33,15 +33,16 @@ export class LoginComponent {
     this.loaderService.isLoading.set(true);
     this.authService.login(user).subscribe({
       next: (response: AuthUserResponse) => {
-        this.alertService.buildAlert.set({type: 'success', text: response.message});
+        this.router.navigate([`/water-tracking/${response.id}/daily`]);
+        this.alertService.buildAlert.set({ type: 'success', text: response.message });
       },
       error: (response) => {
         this.loaderService.isLoading.set(false);
-        this.alertService.buildAlert.set({type: 'error', text: response.error.message});
+        this.alertService.buildAlert.set({ type: 'error', text: response.error.message });
       },
       complete: () => {
         this.loaderService.isLoading.set(false);
       }
     })
-    }
+  }
 }

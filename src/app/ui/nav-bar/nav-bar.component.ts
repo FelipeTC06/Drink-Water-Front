@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
@@ -9,4 +9,11 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './nav-bar.component.scss'
 })
 export class NavBarComponent {
+  route = inject(ActivatedRoute);
+  
+  userId!: string;
+
+  ngOnInit(): void {
+    this.userId = this.route.snapshot.paramMap.get('id')!;
+  }
 }

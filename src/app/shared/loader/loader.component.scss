@@ -1,11 +1,15 @@
 .loading-body{
-    height: 100%;
-    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: flex;
-    background-color: #bac7be;
-    position: fixed;
     justify-content: center;
     align-items: center;
+    background-color: #bac7be;
+    border-radius: 5px;
+    z-index: 1000;
 
     .spinner {
     border: 0 solid transparent;

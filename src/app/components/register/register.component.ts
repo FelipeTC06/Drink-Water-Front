@@ -37,6 +37,7 @@ export class RegisterComponent {
     this.authService.register(user).subscribe({
       next: (response: AuthUserResponse) => {
         this.alertService.buildAlert.set({type: 'success', text: response.message});
+        this.router.navigateByUrl('/login');
       },
       error: (response) => {
         this.loaderService.isLoading.set(false);

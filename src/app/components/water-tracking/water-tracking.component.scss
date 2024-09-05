@@ -1,0 +1,29 @@
+
+
+
+.tracking-body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding: 1rem 2.5rem;
+
+    .title {
+        text-decoration: underline;
+        font-family: "Jura", sans-serif;
+        font-size: 1.5rem;
+        margin: 0;
+    }
+
+
+    .intake-body {
+        .intake-form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+    }
+}

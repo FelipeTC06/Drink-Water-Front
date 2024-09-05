@@ -1,0 +1,46 @@
+<app-nav-bar>
+    <div class="tracking-body">
+        @if (loaderService.isLoading()) {
+            <app-loader></app-loader>
+        }
+        <h1 class="title">Daily Tracking</h1>
+        <section>
+            <div class="intake-body">
+                <form [formGroup]="consumirAguaForm" class="intake-form" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="pequeno" value="250"
+                                formControlName="quantidadeAgua" />
+                            <label class="form-check-label" for="pequeno">
+                                Copo pequeno 250ml
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="medio" value="350"
+                                formControlName="quantidadeAgua" />
+                            <label class="form-check-label" for="medio">
+                                Copo médio 350ml
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="garrafa" value="500"
+                                formControlName="quantidadeAgua" />
+                            <label class="form-check-label" for="garrafa">
+                                Garrafa média 500ml
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Consumir</button>
+                </form>
+            </div>
+        </section>
+        <section>
+            <div class="progresso-container">
+                <p><strong>Meta do dia:</strong> {{ metaDia }}ml</p>
+                <p><strong>Meta restante:</strong> {{ metaRestante }}ml</p>
+                <p><strong>Meta já consumida:</strong> {{ metaConsumida }}ml</p>
+                <p><strong>Meta já consumida (%):</strong> {{ percentualConsumido.toFixed(2) }}%</p>
+              </div>            
+        </section>
+    </div>
+</app-nav-bar>

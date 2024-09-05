@@ -4,15 +4,15 @@
             <nav class="nav-body">
                 <ul class="nav-itens">
                     <li class="li-menu" routerLinkActive="active">
-                        <a routerLink="/water-tracking/daily">Daily</a>
+                        <a [routerLink]="['/water-tracking', userId, 'daily']">Daily</a>
                     </li>
                     <li class="li-menu" routerLinkActive="active">
-                        <a routerLink="/water-tracking/history">All History</a>
+                        <a [routerLink]="['/water-tracking', userId, 'history']">All History</a>
                     </li>
                 </ul>
             </nav>
         </section>
-        <section>
+        <section class="dynamic-content">
             <ng-content></ng-content>
         </section>
     </div>

@@ -23,7 +23,7 @@
             .nav-itens {
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+                justify-content: flex-start;
                 height: 100%;
                 padding: 1rem;
                 margin: 0;
@@ -47,6 +47,10 @@
                     }
                 }
             }
+        }
+
+        .dynamic-content {
+            flex: 1;
         }
     }
 }
