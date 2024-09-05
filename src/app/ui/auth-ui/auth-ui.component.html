@@ -3,7 +3,11 @@
         @if (loaderService.isLoading()) {
             <app-loader></app-loader>
             }
-        <label class="label-title">{{ title }}</label>
+        <div class="nav-auth-body">
+            <div class="nav-auth" routerLinkActive="active"><a routerLink="/register">register</a></div>
+            <div class="separator"></div>
+            <div class="nav-auth" routerLinkActive="active"><a routerLink="/login">login</a></div>
+        </div>
         <ng-content></ng-content>
     </section>
 </div>
